@@ -1,0 +1,24 @@
+{
+  "name": "covidstores",
+  "version": "1.0.0",
+  "description": "An online shop for companies",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niwagabaa/covid-stores.git"
+  },
+  "author": "Rogers Niwagaba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niwagabaa/covid-stores/issues"
+  },
+  "homepage": "https://github.com/niwagabaa/covid-stores#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
