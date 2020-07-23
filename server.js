@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 //configuring nodemon that will automatically resart the server
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/Index.html");
+  res.sendFile(__dirname + "/index.html");
 })
 
 //routing pages that dont exist on the application
