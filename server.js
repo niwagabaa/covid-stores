@@ -4,7 +4,9 @@ const express = require('express');
 //configuring middleware
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan'):
+const mongoose = require('mongoose');
+//const logger = require('morgan'):
+
 
 
 // INSTANTIANTIONS
@@ -17,37 +19,55 @@ app.set('views', './views');
 
 // MIDDLEWARE
 // To parse URL encoded data
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // To parse json data
 app.use(bodyParser.json());
 
 app.use(cookieParser());
 
-// session middleware
-app.use(
-  session({
-    secret: 'arbitary-string'
-    resave: false,
-    saveUninitialised: true,
-    cookie: { secure: true }
-  })
-);
+//connect to mongoose
+// const dbPath = 'mongodb://localhost/firstrest';
+// const options = {useNewUrlParser: true, useUnifiedTopology: true}
+// const mongo = mongoose.connect(dbPath, options);
+// mongo.then(() => {
+//     console.log('connected');
+// }, error => {
+//     console.log(error, 'error');
+// })
 
-app.use(logger('common'));
+// // session middleware
+// app.use(
+//   session({
+//     secret: 'arbitary-string'
+//     resave: false,
+//     saveUninitialised: true,
+//     cookie: { secure: true }
+//   })
+// );
+//
+// app.use(logger('common'));
 
 //middleware for static files
 app.use(express.static('public'));
 
 //ROUTES
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.render('index');
 })
 
-//routing pages that dont exist on the application
-app.get('*', (req, res) => {
-  res.send('Error. This page doesnt exist on this planet');
-})
+// app.get("/register", (req, res) => {
+//  res.sendFile('agentRegister.html', { root: path.join(__dirname, '../public') });
+// });
+//
+// app.post('/register', (req, res) => {
+//   console.log(req.body);
+//   res.sendFile('agentRegister.html', { root: path.join(__dirname, '../public') });
+// })
+// //routing pages that dont exist on the application
+// app.get('*', (req, res) => {
+//   res.send('Error. This page doesnt exist on this planet');
+//})
 
 //routing to the files in the controller
 

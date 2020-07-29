@@ -1,0 +1,32 @@
+extends layout
+block content
+  h2 Registering a Sales Agent for COVIDSTORES
+    div
+      form(action='index.html' method='post')
+        .form-row
+          label(for='full-name') Name
+          input#full-name(name='full-name' type='text')
+            
+        .form-row
+          label(for='email') Email
+          input#email(name='email' type='email' placeholder='name@example.com')
+            
+        .form-row
+          label(for='NIN') NINumber
+          input(type='text' name='NIN' value='NIN')
+            
+        .form-row
+          label(for='empID') Employee ID
+          input(type='text' name='empID' value='empID')
+            
+        fieldset.legacy-form-row
+          legend Gender
+            input#male(name='male' type='radio' value='male')
+            label.radio-label(for='male') Male
+            
+            br
+            
+            input#female(name='female' type='radio' value='female')
+            label.radio-label(for='female') Female
+        .form-row
+          button Submit
