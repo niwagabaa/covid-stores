@@ -1,12 +1,9 @@
 const express = require('express');
-
 const router = express.Router();
 
+//showing the products
 router.get('/', (req, res) => {
-  res.send('users page');
+  res.render('products');
 })
 
-router.get('/login', (req, res) => {
-  res.send(' Log in as  a user');
-})
 module.exports = router;

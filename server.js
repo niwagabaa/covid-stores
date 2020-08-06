@@ -1,30 +1,53 @@
 // configuring DEPRNDENCIES
 //configuring the express web app
 const express = require('express');
-//configuring middleware
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const mongoose = require('mongoose');
-//const logger = require('morgan'):
-
-
-
-// INSTANTIANTIONS
 const app = express();
-//configuring nodemon that will automatically resart the server
+//configuring middleware
 
-//configuring pug as a template engine in a views folder
-app.set('views engine', 'pug');
-app.set('views', './views');
-
-// MIDDLEWARE
-// To parse URL encoded data
+//require('dotenv/config')
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
-
 // To parse json data
 app.use(bodyParser.json());
 
+const cookieParser = require('cookie-parser');
 app.use(cookieParser());
+
+const mongoose = require('mongoose');
+//const logger = require('morgan'):
+
+const url = 'mongodb://localhost:27017/covidstore';
+const path = require('path');
+
+
+app.use(express.static('public'));
+
+//configuring pug as a template engine in a views folder
+app.set('view engine', 'pug');
+app.set('views', './views');
+
+//app.set('views', __dirname + '/views');
+
+// MIDDLEWARE
+//requiring mongose and connecting to db
+
+//requiring mongose and connecting to db
+mongoose.connect(url, {
+useNewUrlParser: true,
+useUnifiedTopology: true
+});
+mongoose.connection.on('open', () => {
+console.log('Mongoose connection open');
+})
+.on('error', (err) => {
+console.log(`Connection error: ${err.message}`);
+});
+
+
+
+
+
+
 
 //connect to mongoose
 // const dbPath = 'mongodb://localhost/firstrest';
@@ -49,16 +72,37 @@ app.use(cookieParser());
 // app.use(logger('common'));
 
 //middleware for static files
-app.use(express.static('public'));
+
+
 
 //ROUTES
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('home');
 })
 
+app.get('/index', (req, res) => {
+  res.render('index');
+})
+const admin = require('./routes/admin');
+
+app.use('/admin', admin)
+
+const agent = require('./routes/agent');
+
+app.use('/agent', agent);
+
+
+const users = require('./routes/users');
+
+app.use('/users', users);
+
+const products = require('./routes/products')
+app.use('/products', products);
+
+
 // app.get("/register", (req, res) => {
-//  res.sendFile('agentRegister.html', { root: path.join(__dirname, '../public') });
-// });
+// res.sendFile('agentRegister.html', { root: path.join(__dirname, '../public') });
+//  });
 //
 // app.post('/register', (req, res) => {
 //   console.log(req.body);
