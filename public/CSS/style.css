@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;1,200&family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap');
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;1,200&family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap');
+/* *
 #header {
   background-color: #DDE0E3;
   padding: 30px 20px;
@@ -13,7 +8,7 @@
 
 /* css for the form */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -124,7 +119,7 @@ body {
 
 .form-row label {
   margin-bottom: 15px;
-}
+} */ 
 
 /* STARTING ON THE CSS OF THE REAL HOME PAGE */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;1,200&family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap');
