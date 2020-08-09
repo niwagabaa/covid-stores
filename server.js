@@ -63,6 +63,14 @@ app.use('/users', users);
 const products = require('./routes/products')
 app.use('/products', products);
 
+// These are the linked pages in development mode
+app.get('/nav', (req, res) => {
+  res.sendFile(__dirname + "/views/layouts.html")
+})
+
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + "/views/managerlogin.html")
+})
 
 app.get('*', (req, res) => {
 res.send('Error. This page doesnt exist on this planet');

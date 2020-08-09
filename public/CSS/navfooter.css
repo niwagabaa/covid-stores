@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Pacifico&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  /* justify-content: center; */
+  list-style-type: none;
+  display: flex;
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  background-color: #566573;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.submenu {
+    list-style-type: none;
+    border: 2px solid yellow;
+}
+
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+    font-family: Pacifico;
+}
+
+em {
+  font-family: Luckiest Guy;
+}
+
+.item {
+    padding: 10px;
+}
+.item.button {
+    padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #ccc;
+}
+
+/* Styling the navigation sections */
+.logo{
+
+}
+
+.search {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.help {
+
+}
+
+.cart {
+
+}
+.member {
+  margin-left: 20px;
+}
+
+/* Working on responsiveness of the view */
+@media all and (max-width: 600px) {
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar > li {
+    flex-basis: 50%;
+  }
+
+}
+
+@media all and (max-width: 400px) {
+  .navbar > li {
+    flex-basis: 100%;
+  }
+  .search {
+    order: 1;
+  }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #5D6D7E;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+
+.footer-item {
+    /* border: 1px solid red; */
+    height: 100px;
+    flex: 1;
+}
+
+.footer-three {
+    display: flex;
+    flex: 3;
+    border-radius: 10px;
+    align-items: center;
+  }
+
+.footer-one,
+.footer-three {
+    display: flex;
+    flex: initial;
+    width: 300px;
+    align-items: center;
+}
+
+.social {
+  display: flex;
+  height: 25px;
+  margin-left: 30px;
+}
+
+.copyright {
+  background-color: #5D6D7E;
+}
+
+/* form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+} */

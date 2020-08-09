@@ -3,20 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/CSS/style.css">
   </head>
   <body>
-    <div class="form">
-      <form class="admin" action="index.html" method="post">
+    <div class="form-container">
+      <div class="manager-form">
+        <form class="admin" action="index.html" method="post">
+          <label for="username">User name: </label>
+          <input type="text" name="name" value="name">
+          <br>
+          <label for="password">Password: </label>
+          <input type="password" name="password" value="password">
 
-
-        <label for="username">User Name</label>
-        <input type="text" name="name" value="name">
-
-        <label for="password">Password</label>
-        <input type="password" name="password" value="password">
-
-      </form>
-
+        </form>
+      </div>
+      <div class="agent-form">
+        <form class="admin" action="index.html" method="post">
+          <label for="username">User name: </label>
+          <input type="text" name="name" value="name">
+          <br>
+          <label for="password">Password: </label>
+          <input type="password" name="password" value="password">
+      </div>
     </div>
+
   </body>
 </html>

@@ -1,32 +1,46 @@
-extends layout
-block content
-  h2 Registering a Sales Agent for COVIDSTORES
-    div
-      form(action='index.html' method='post')
-        .form-row
-          label(for='full-name') Name
-          input#full-name(name='full-name' type='text')
-            
-        .form-row
-          label(for='email') Email
-          input#email(name='email' type='email' placeholder='name@example.com')
-            
-        .form-row
-          label(for='NIN') NINumber
-          input(type='text' name='NIN' value='NIN')
-            
-        .form-row
-          label(for='empID') Employee ID
-          input(type='text' name='empID' value='empID')
-            
-        fieldset.legacy-form-row
-          legend Gender
-            input#male(name='male' type='radio' value='male')
-            label.radio-label(for='male') Male
-            
-            br
-            
-            input#female(name='female' type='radio' value='female')
-            label.radio-label(for='female') Female
-        .form-row
-          button Submit
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/CSS/register.css')
+  title Register agent 
+.header
+  h1
+    | Add New Sales Agent
+form(action='/register' method='post')
+  .details
+    fieldset
+      .details1
+        label(for='fname') First Name: 
+        input#fname(type='text' name='fname' placeholder='First name')
+      .details1
+        label(for='lname') Last Name: 
+        input#lname(type='text' name='lname' placeholder='Last name')
+      .details1
+        label(for='fname') First Name: 
+        input#fname(type='text' name='fname' placeholder='First name')
+      .details1
+        label(for='email') Email: 
+        input#email(type='email' name='email' placeholder='Email')
+      .details1
+        label(for='phone') Phone Number: 
+        input#phone(type='number' name='phone' placeholder='phone number')
+      .row
+        label Gender
+        .form-inline
+          label
+            input(type='radio' name='gender' value='male')
+            |  Male
+          label
+            input(type='radio' name='gender' value='female')
+            |  Female
+        #genderErr.error
+      .details1
+        label(for='NIN') National Id Number: 
+        input#NIN(type='text' name='NIN' placeholder='National Id Number')
+      .details1
+        label(for='EIN') Employee Id Number: 
+        input#EID(type='text' name='EIN' placeholder='Agent Id Number')
+    .row
+      input(type='submit' value='Submit')
+a(href='login.html') Go to login
