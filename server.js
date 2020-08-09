@@ -66,6 +66,10 @@ app.get('/login', (req, res) => {
   res.sendFile(__dirname + "/views/login.html")
 })
 
+app.get('/manager', (req, res) => {
+  res.sendFile(__dirname + "/views/managerDashboard.html")
+})
+
 app.get('*', (req, res) => {
 res.send('Error. This page doesnt exist on this planet');
 })
