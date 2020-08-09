@@ -44,20 +44,14 @@ app.get('/', (req, res) => {
   res.render('home');
 })
 
-app.get('/index', (req, res) => {
-  res.render('index');
-})
 const admin = require('./routes/admin');
-
 app.use('/admin', admin)
 
 const agent = require('./routes/agent');
-
 app.use('/agent', agent);
 
 
 const users = require('./routes/users');
-
 app.use('/users', users);
 
 const products = require('./routes/products')
@@ -69,7 +63,7 @@ app.get('/nav', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-  res.sendFile(__dirname + "/views/managerlogin.html")
+  res.sendFile(__dirname + "/views/login.html")
 })
 
 app.get('*', (req, res) => {
