@@ -1,15 +1,52 @@
 doctype html
-html
-  head
-    link(rel='stylesheet' href='../public/CSS/style.css')
-    title COVIDSTORES 
-    
-  body
-    
-    block content
-      
-  footer
-    hr
-    block footer
-      2020 covidstores. All rights reserved.
-    
+head
+  meta(charset='utf-8')
+  title Online Store for furniture, fitness kits machinery, TV sets, home theaters etc.
+  link(rel='icon' href='https://img.icons8.com/color/48/000000/shopping-cart.png' type='image/x-icon')
+  link(rel='stylesheet' href='/CSS/navfooter.css')
+  link(rel='stylesheet' href='/CSS/style.css')
+  script(src='https://kit.fontawesome.com/a076d05399.js')
+nav
+  ul.nav
+    .logo
+      li
+        a(href='home')
+          i.fas.fa-shopping-cart
+          |  COVID
+          em STORES
+    .search
+      li
+        form.example(action='.')
+          input(type='text' placeholder='Search for item' name='search')
+          button(type='submit' style='border: 1px solid #212F3C; border-radius: 3px; background-color: Transparent;')
+            i.fa.fa-search
+    .help
+      li.item
+        a(href='#') help
+    .cart
+      li.item
+        a(href='#') Cart
+    .member
+      li.item.has-submenu
+        a(tabindex='0') Mgt
+        ul.submenu
+          li.item.button
+            a(href='login') Sales Agent
+          li.item.button.secondary
+            a(href='login') Manager
+            
+block content
+  
+footer
+  .footer
+    .footer-item.footer-one
+      .social
+        | Follow us:
+        img(src='/images/social-icons.svg' alt='social')
+    .footer-item.footer-two
+    .footer-item.footer-three
+      .subscribe
+        | Subscribe &dtrif;
+  hr
+  .copyright
+    | &copy; Niwagaba Rogers. All rights reserved.

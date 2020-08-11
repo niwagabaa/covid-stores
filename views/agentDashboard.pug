@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  .main-body
+    .dashboard-menu
+      nav#navbar
+        header Manager Dashboard
+        a.nav-link(href='#records-purchases') Recording Purchases
+        a.nav-link(href='#instalment-payments') Payments based on pay interval
+    #main-doc
+      .dashboard-items
+        .greeting
+          | Howdy #agentName
+        section#records-purchases.main-section(style='padding: 30px;')
+          header Recording Purchases 
+          fieldset
+            legend
+              h3
+                | Clients 
+                em Purchase Record
+            form.admin(action='index.html' method='post')
+              .row
+                label(for='cname') Client&apos;s name : 
+                input(type='text' name='cname' placeholder="Client's name" style='border-radius: 3px;')
+              .row
+                label(for='location') Location : 
+                input(type='text' placeholder='Thier location' name='location' style='border-radius: 3px;')
+              .row
+                label(for='pno') Phone Number : 
+                input(type='text' placeholder='Client phone no' name='pno' style='border-radius: 3px;')
+              .row
+                label(for='email') Email : 
+                input(type='email' name='email' placeholder="Client's email" style='border-radius: 3px;')
+              .row
+                label(for='initialPay') Initial Pay : 
+                input(type='number' placeholder='' name='initialPay' style='border-radius: 3px;')
+              .row
+                label(for='NIN') National ID Number : 
+                input(type='text' placeholder='National ID number' name='NIN' style='border-radius: 3px;')
+              .row
+                label(for='name') Name : 
+                input(type='text' name='name' placeholder="Item's name" style='border-r adius: 3px;')
+              .row
+                label(for='serialNumber') Serial Number : 
+                input(type='text' placeholder="Item's Serial number" name='serialNumber' style='border-radius: 3px;')
+              .row
+                label(for='dateOfPay') Date of Pay : 
+                input(type='date' placeholder='Date of payment' name='dateOfPay' style='border-radius: 3px;')
+              .row
+                label(for='dateOfPayment') Next date of payment : 
+                input(type='date' placeholder='' name='dateOfPayment' style='border-radius: 3px;')
+              .row
+                label(for='nextPayment') Amount next payable : 
+                input(type='number' placeholder='' name='nextPayment' style='border-radius: 3px;')
+              .row
+                label(for='refereeNumber') Referee Number : 
+                input(type='text' placeholder='Item referee Number' name='refereeNumber' style='border-radius: 3px;')
+              .row
+                label(for='purchaseReceipt') Purchase Receipt : 
+                input(type='text' placeholder='' name='purchaseReceipt' style='border-radius: 3px;')
+              .row
+                button(type='button' name='button') RECORD

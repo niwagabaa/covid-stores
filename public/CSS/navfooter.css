@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Pacifico&display=swap');
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .nav {
   /* justify-content: center; */
   list-style-type: none;
   display: flex;
-  height: 150px;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   padding-top: 0;
-  background-color: #566573;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
+  background-color: #212F3C ;
   border-bottom: 2px solid #17202A ;
 }
 .submenu {
@@ -21,15 +21,6 @@
     border: 2px solid yellow;
 }
 
-.logo {
-    font-size: 20px;
-    padding: 7.5px 10px 7.5px 0;
-    font-family: Pacifico;
-}
-
-em {
-  font-family: Luckiest Guy;
-}
 
 .item {
     padding: 10px;
@@ -43,8 +34,18 @@ em {
 }
 
 /* Styling the navigation sections */
-.logo{
+.logo {
+    font-size: 20px;
+    padding: 7.5px 0 7.5px 50px;
+    font-family: Pacifico;
+}
 
+em {
+  font-family: Luckiest Guy;
+}
+
+a {
+  text-decoration: none;
 }
 
 .search {
@@ -89,9 +90,8 @@ em {
 .footer {
     display: flex;
     justify-content: space-between;
-    background-color: #5D6D7E;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    background-color: #EAECEE;
+    margin-top: 40px;
 
   }
 
@@ -122,11 +122,16 @@ em {
   margin-left: 30px;
 }
 
+hr {
+  color: #EAECEE;
+}
+
 .copyright {
   padding: 5px;
   padding-left: 15px;
-  background-color: #5D6D7E;
+  background-color: #EAECEE;
   border-bottom: 5px solid #17202A ;
+  text-align: center;
 }
 
 /* form.example input[type=text] {

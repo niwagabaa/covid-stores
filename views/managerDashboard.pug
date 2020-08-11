@@ -1,0 +1,101 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Dashboard| Manager
+  link(rel='stylesheet' href='/CSS/style.css')
+.main-body
+  .dashboard-menu
+    nav#navbar
+      header Manager Dashboard
+      a.nav-link(href='#register-agent') Register Sales Agent
+      a.nav-link(href='#select-items') Select Items for the System
+      a.nav-link(href='#records-access') Records about all transactions
+      a.nav-link(href='#remove-items') Remove stock Items
+  #main-doc
+    .dashboard-items
+      .greeting
+        | Howdy #managerName
+      section#register-agent.main-section(style='padding: 30px;')
+        header Register Sales Agent
+        fieldset
+          legend
+            h3
+              | Details of 
+              em Sale Agent
+          form.admin(action='.' method='post')
+            .row
+              label(for='name') Name : 
+              input(type='text' name='name' placeholder="Agent's name" style='border-radius: 3px;')
+            .row
+              label(for='nin') National ID Number : 
+              input(type='text' placeholder='National ID number' name='nin' style='border-radius: 3px;')
+            .row
+              label(for='empid') Employee ID : 
+              input(type='text' placeholder='Employee ID' name='empid' style='border-radius: 3px;')
+            .row
+              label(for='email') Email : 
+              input(type='email' name='email' placeholder='Email' style='border-radius: 3px;')
+            .row
+              label(for='password') Password : 
+              input(type='password' placeholder='Password' name='password' style='border-radius: 3px;')
+            .row
+              button(type='submit' name='submit') REGISTER
+      section#select-items.main-section(style='padding: 30px;')
+        header Select Items for the System
+        fieldset
+          legend
+            h3
+              | Details of 
+              em Sale Agent
+          form.admin(action='.' method='post')
+            .row
+              label(for='name') Name : 
+              input(type='text' name='name' placeholder="Item's name" style='border-radius: 3px;')
+            .row
+              label(for='make') Make : 
+              input(type='text' placeholder='' name='make' style='border-radius: 3px;')
+            .row
+              label(for='dateOfEntry') Date of Entry : 
+              input(type='date' placeholder='' name='dateOfEntry' style='border-radius: 3px;')
+            .row
+              label(for='category') Category : 
+              input(type='text' name='category' placeholder='' style='border-radius: 3px;')
+            .row
+              label(for='serialNumber') Serial Number : 
+              input(type='text' placeholder='' name='serialNumber' style='border-radius: 3px;')
+            .row
+              label(for='serialNumber') Serial Number : 
+              input(type='text' placeholder='' name='serialNumber' style='border-radius: 3px;')
+            .row
+              label(for='price') Price : 
+              input(type='text' placeholder='' name='price' style='border-radius: 3px;')
+            .row
+              label(for='initialPay') Initial Pay : 
+              input(type='number' placeholder='' name='initialPay' style='border-radius: 3px;')
+            .row
+              label(for='payInterval') Pay Interval : 
+              input(type='number' placeholder='' name='payInterval' style='border-radius: 3px;')
+            .row
+              label(for='color') Color : 
+              input(type='text' placeholder='' name='color' style='border-radius: 3px;')
+            .row
+              label(for='description') Description : 
+              textarea(name='descrption' id='' cols='20' rows='2' style='border-radius: 3px;')
+            .row
+              label(for='itemPhoto') Item Photo : 
+              input(type='file' name='itemPhoto' id='')
+            .row
+              label(for='numberInStock') Number in stock : 
+              input(type='number' placeholder='' name='numberInStock' style='border-radius: 3px;')
+            .row
+              button(type='button' name='button') REGISTER
+        |                       Selects items for this system. All items in this programme, will be
+        |                       listed for the the world to see.(physically these items should be
+        |                       labeled with LTPP).
+      section#records-access.main-section
+        header Records about all transactions
+        |                       Access to all records about all transactions
+      section#remove-items.main-section
+        header Remove stock Items
+        |                       Remove out of stock items from the display
+        code console.log(kumannyoko)

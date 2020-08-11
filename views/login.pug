@@ -1,0 +1,36 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Login page
+  link(rel='stylesheet' href='/CSS/style.css')
+.form-container
+  .manager-form
+    fieldset
+      legend
+        h3
+          | Log in as a 
+          em Store Manager
+      form.admin(action='index.html' method='post')
+        .row
+          label(for='email') Email : 
+          input(type='email' name='email' placeholder='Email' style='border-radius: 3px;')
+        .row
+          label(for='password') Password : 
+          input(type='password' placeholder='Password' name='password' style='border-radius: 3px;')
+        .row
+          button(type='button' name='button') LOGIN
+  .agent-form
+    fieldset
+      legend
+        h3
+          | Log in as a 
+          em Sales Agent
+      form.admin(action='index.html' method='post')
+        .row
+          label(for='email') Email : 
+          input(type='email' name='email' placeholder='Email' style='border-radius: 3px;')
+        .row
+          label(for='password') Password : 
+          input(type='password' name='password' placeholder='Password' style='border-radius: 3px;')
+        .row
+          button(type='button' name='button') LOGIN

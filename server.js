@@ -6,12 +6,10 @@ const app = express();
 
 //require('dotenv/config')
 const bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 // To parse json data
 app.use(bodyParser.json());
-
-const cookieParser = require('cookie-parser');
-app.use(cookieParser());
 
 const mongoose = require('mongoose');
 //const logger = require('morgan'):
@@ -38,6 +36,9 @@ console.log('Mongoose connection open');
 console.log(`Connection error: ${err.message}`);
 });
 
+// requiring the database models
+require('./model/salesAgents');
+
 
 //ROUTES
 app.get('/', (req, res) => {
@@ -50,28 +51,17 @@ app.use('/admin', admin)
 const agent = require('./routes/agent');
 app.use('/agent', agent);
 
-
-const users = require('./routes/users');
-app.use('/users', users);
+// const users = require('./routes/users');
+// app.use('/users', users);
 
 const products = require('./routes/products')
 app.use('/products', products);
 
-// These are the linked pages in development mode
-app.get('/nav', (req, res) => {
-  res.sendFile(__dirname + "/views/layouts.html")
-})
-
-app.get('/login', (req, res) => {
-  res.sendFile(__dirname + "/views/login.html")
-})
-
-app.get('/manager', (req, res) => {
-  res.sendFile(__dirname + "/views/managerDashboard.html")
-})
 
 app.get('*', (req, res) => {
 res.send('Error. This page doesnt exist on this planet');
 })
+
+module.exports = app;
 // BOOTSTRAPPING THE SERVER
 app.listen (4000, ()=> console.log("The application is running on port 4000"));
